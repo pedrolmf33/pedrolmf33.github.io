@@ -1,0 +1,319 @@
+/* =============================================================================
+   Meu Portfólio - estilos migrados de Meu_Portfolio/styles.css
+   Todas as regras estão escopadas em .meu-portfolio para não afetar
+   o restante do template (Início e Currículo).
+   As cores serão padronizadas com o resto do site em uma etapa futura.
+============================================================================= */
+
+.meu-portfolio {
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --claro: #e2e8f0;
+  --vidro: rgba(255, 255, 255, 0.1);
+
+  position: relative;
+  overflow: hidden;
+  background-color: var(--escuro);
+  color: var(--claro);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 4px;
+}
+
+.meu-portfolio *,
+.meu-portfolio *::before,
+.meu-portfolio *::after {
+  box-sizing: border-box;
+}
+
+/* Conteúdo acima do fundo de partículas */
+.meu-portfolio > *:not(.particulas) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fundo com "partículas" (gradientes radiais) */
+.meu-portfolio .particulas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
+    var(--escuro);
+}
+
+/* ---------- Navegação interna ---------- */
+.meu-portfolio .navegacao {
+  background-color: rgba(15, 23, 42, 0.8);
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.meu-portfolio .menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 3rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.meu-portfolio .menu-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--claro);
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.meu-portfolio .menu-link::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  transition: width 0.3s ease;
+}
+
+.meu-portfolio .menu-link:hover::after {
+  width: 100%;
+}
+
+/* ---------- Cabeçalho ---------- */
+.meu-portfolio .cabecalho {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 1rem;
+}
+
+.meu-portfolio .foto-perfil {
+  width: 300px;
+  height: 300px;
+  max-width: 70vw;
+  max-height: 70vw;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+  border-radius: 50%;
+  border: 4px solid var(--vidro);
+  animation: mp-flutuar 4s ease-in-out infinite;
+}
+
+.meu-portfolio h1 {
+  font-size: 3.5rem;
+  color: var(--primaria);
+  font-weight: bold;
+  margin: 20px;
+  text-align: center;
+}
+
+.meu-portfolio .cabecalho-sub-titulo {
+  font-size: 1.5rem;
+  color: var(--claro);
+  text-align: center;
+}
+
+/* ---------- Sobre ---------- */
+.meu-portfolio .sobre {
+  padding: 6rem 2rem;
+}
+
+.meu-portfolio .sobre-titulo {
+  font-size: 3rem;
+  color: var(--claro);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.meu-portfolio .sobre-caixa {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid var(--vidro);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.meu-portfolio .sobre-paragrafo {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* ---------- Projetos ---------- */
+.meu-portfolio .projetos {
+  padding: 6rem 2rem;
+}
+
+.meu-portfolio .projetos-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--claro);
+  margin-bottom: 50px;
+}
+
+.meu-portfolio .projetos-caixa {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.meu-portfolio .projetos-caixa > a {
+  display: block;
+}
+
+.meu-portfolio .projetos-card {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--vidro);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.meu-portfolio .projetos-card:hover {
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+  transform: translateY(-10px) scale(1.03);
+}
+
+.meu-portfolio .projetos-imagem {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.meu-portfolio .caixa-texto-projetos {
+  padding: 1.5rem;
+}
+
+.meu-portfolio .inf-projetos {
+  color: var(--claro);
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.meu-portfolio .paragrafo-projetos {
+  color: rgba(226, 232, 240, 0.8);
+  line-height: 1.4rem;
+  margin: 0;
+}
+
+/* ---------- Contato ---------- */
+.meu-portfolio .contatos {
+  padding: 6rem 2rem;
+}
+
+.meu-portfolio .contatos-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--claro);
+  margin-bottom: 50px;
+}
+
+.meu-portfolio .formulario-contato {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border: 1px solid var(--vidro);
+  border-radius: 16px;
+}
+
+.meu-portfolio .grupo-form {
+  margin-bottom: 1.5rem;
+}
+
+.meu-portfolio .campo-form {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: var(--claro);
+  border: 1px solid var(--vidro);
+  outline: none;
+}
+
+.meu-portfolio .campo-form::placeholder {
+  color: rgba(226, 232, 240, 0.6);
+}
+
+.meu-portfolio .campo-form:focus {
+  border-color: var(--secundaria);
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.meu-portfolio .botao-form {
+  color: var(--claro);
+  background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.meu-portfolio .botao-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.meu-portfolio a,
+.meu-portfolio a:hover,
+.meu-portfolio a:focus {
+  color: rgb(224, 218, 218);
+  text-decoration: none;
+}
+
+@keyframes mp-flutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 768px) {
+  .meu-portfolio .menu {
+    gap: 1.5rem;
+  }
+
+  .meu-portfolio h1 {
+    font-size: 2.5rem;
+  }
+
+  .meu-portfolio .sobre-titulo {
+    font-size: 2.2rem;
+  }
+
+  .meu-portfolio .sobre,
+  .meu-portfolio .projetos,
+  .meu-portfolio .contatos {
+    padding: 4rem 1rem;
+  }
+}
