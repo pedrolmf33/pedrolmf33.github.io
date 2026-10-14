@@ -1,0 +1,330 @@
+/* =============================================================================
+   Tema Tecnológico Unificado (Inspirado no Meu Portfólio)
+   Paleta: 
+   --primaria: #4f46e5 (Índigo vibrante)
+   --secundaria: #7c3aed (Roxo tech)
+   --escuro: #0f172a (Slate escuro profundo)
+   --card-bg: rgba(30, 41, 59, 0.7) ou #1e293b
+   --borda-vidro: rgba(255, 255, 255, 0.1)
+   --claro: #e2e8f0
+   --texto-mutado: #94a3b8
+============================================================================= */
+
+:root {
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --maisEscuro: #0a0f1d;
+  --card-bg: rgba(30, 41, 59, 0.75);
+  --card-header: rgba(15, 23, 42, 0.85);
+  --borda-vidro: rgba(255, 255, 255, 0.1);
+  --claro: #e2e8f0;
+  --branco: #ffffff;
+  --texto-mutado: #94a3b8;
+  --gradiente-tech: linear-gradient(135deg, var(--primaria), var(--secundaria));
+  --glow-tech: 0 0 25px rgba(79, 70, 229, 0.35);
+}
+
+/* Fundo Geral da Página */
+body {
+  background-color: var(--escuro) !important;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.25) 0%, transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.25) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.9) 0%, var(--maisEscuro) 100%) !important;
+  background-attachment: fixed !important;
+  color: var(--claro) !important;
+}
+
+/* Preloader */
+.preloader {
+  background: var(--escuro) !important;
+}
+.preloader-spinner:after {
+  border-top-color: var(--secundaria) !important;
+}
+
+/* Header / Navbar Global */
+.site-title {
+  color: var(--claro) !important;
+}
+.site-title span {
+  color: var(--primaria) !important;
+  background: var(--gradiente-tech);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header.sticked {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--borda-vidro) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+.header.sticked .site-title {
+  color: var(--claro) !important;
+}
+.site-main-menu li a {
+  color: var(--claro) !important;
+  opacity: 0.7 !important;
+  transition: all 0.3s ease !important;
+}
+.site-main-menu li a:hover,
+.site-main-menu li.active a {
+  opacity: 1 !important;
+  color: #fff !important;
+}
+.site-main-menu li a:after {
+  background: var(--gradiente-tech) !important;
+  height: 3px !important;
+  box-shadow: 0 0 8px var(--primaria) !important;
+}
+
+/* Mobile Header */
+.mobile-header {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border-bottom: 1px solid var(--borda-vidro) !important;
+}
+.mobile-site-title {
+  color: var(--claro) !important;
+}
+.menu-toggle i {
+  color: var(--claro) !important;
+}
+
+/* Container Principal das Páginas (Card Flutuante Central) */
+.pt-page .section-inner {
+  background-color: var(--card-bg) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--borda-vidro) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--glow-tech) !important;
+  color: var(--claro) !important;
+}
+
+/* Cabeçalho da Página Inicial (Home) */
+.start-page-content .page-header {
+  background: var(--gradiente-tech) !important;
+  border-bottom: 1px solid var(--borda-vidro) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.start-page-content .page-header::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0; left: 0; right: 0; bottom: 0 !important;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%) !important;
+  pointer-events: none !important;
+}
+.start-page-content .page-header .photo {
+  border: 4px solid var(--borda-vidro) !important;
+  background-color: var(--escuro) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+.start-page-content .page-header .photo img {
+  border-radius: 8px !important;
+}
+.start-page-content .page-header .title-block h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+.start-page-content .page-header .title-block .sp-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Redes Sociais no Header */
+.start-page-content .social-links a {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+.start-page-content .social-links a:hover {
+  background: #ffffff !important;
+  color: var(--primaria) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Títulos das Seções (H2, H3, H4) */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+.block-title h3 {
+  color: #ffffff !important;
+}
+.block-title h3 span {
+  color: var(--primaria) !important;
+  background: var(--gradiente-tech) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Cabeçalho das Subpáginas (Currículo / Portfólio) */
+.custom-page-content .page-header.color-1 {
+  background: var(--gradiente-tech) !important;
+  border-bottom: 1px solid var(--borda-vidro) !important;
+}
+.custom-page-content .page-header.color-1 h2 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+.custom-page-content .page-content {
+  background-color: transparent !important;
+}
+
+/* Textos e Parágrafos */
+p {
+  color: var(--claro) !important;
+}
+
+/* Lista de Informações Pessoais (Idade, Cidade, etc.) */
+.info-list li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 8px 0 !important;
+}
+.info-list li .title {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+.info-list li .value {
+  color: var(--texto-mutado) !important;
+}
+
+/* Timeline (Educação, Experiência, Idiomas) */
+.timeline {
+  border-left: 2px solid rgba(79, 70, 229, 0.3) !important;
+}
+.timeline-item {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid var(--borda-vidro) !important;
+  border-left: 3px solid var(--primaria) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.3s ease !important;
+}
+.timeline-item:hover {
+  transform: translateX(5px) !important;
+  border-left-color: var(--secundaria) !important;
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.2) !important;
+}
+.timeline-item:before {
+  background-color: var(--escuro) !important;
+  border: 2px solid var(--secundaria) !important;
+  box-shadow: 0 0 8px var(--primaria) !important;
+}
+.timeline-item:after {
+  background-color: var(--primaria) !important;
+}
+.timeline-item .item-title {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+.timeline-item .item-period {
+  color: #a78bfa !important; /* Roxo claro legível */
+  font-weight: 500 !important;
+}
+.timeline-item .item-small {
+  color: var(--texto-mutado) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+.timeline-item .item-description {
+  color: var(--claro) !important;
+  line-height: 1.6 !important;
+}
+
+/* Barras de Habilidades (Skills) */
+.skills-info h4 {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+.skill-container {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid var(--borda-vidro) !important;
+  border-radius: 8px !important;
+  height: 12px !important;
+  overflow: hidden !important;
+}
+.skill-percentage {
+  background: var(--gradiente-tech) !important;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.5) !important;
+  border-radius: 8px !important;
+}
+
+/* Tags / Badges de Competências */
+.tags li a {
+  background-color: rgba(15, 23, 42, 0.7) !important;
+  color: var(--claro) !important;
+  border: 1px solid var(--borda-vidro) !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  display: inline-block !important;
+  transition: all 0.3s ease !important;
+}
+.tags li a:hover {
+  background: var(--gradiente-tech) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35) !important;
+}
+
+/* Botões (Download Currículo e Formulário) */
+.btn-secondary,
+.download-resume .btn,
+.btn-primary {
+  background: var(--gradiente-tech) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 12px 28px !important;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4) !important;
+  transition: all 0.3s ease !important;
+  text-transform: none !important;
+}
+.btn-secondary:hover,
+.download-resume .btn:hover,
+.btn-primary:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 22px rgba(124, 58, 237, 0.6) !important;
+  color: #ffffff !important;
+}
+
+/* Ajuste na Aba Portfólio (Subpágina) */
+/* Elimina borda duplicada da seção interna para fluir com o tema */
+.pt-page[data-id="portfolio"] .section-inner {
+  padding: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.meu-portfolio {
+  border-radius: 20px !important;
+  border: 1px solid var(--borda-vidro) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--glow-tech) !important;
+}
+
+/* Footer / Copyrights */
+body > footer .copyrights {
+  color: var(--texto-mutado) !important;
+  opacity: 0.8 !important;
+}
+
+/* Rolagem elegante (Scrollbar) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--escuro);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 70, 229, 0.5);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secundaria);
+}
