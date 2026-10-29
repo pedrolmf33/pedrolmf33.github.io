@@ -50,46 +50,50 @@
 
 /* ---------- Navegação interna ---------- */
 .meu-portfolio .navegacao {
-  background-color: rgba(15, 23, 42, 0.8);
+  background-color: #ffffff;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .meu-portfolio .menu {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  gap: 3rem;
+  gap: 1.25rem;
   justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.meu-portfolio .menu li {
   margin: 0;
   padding: 0;
 }
 
 .meu-portfolio .menu-link {
-  background: none;
-  border: none;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 24px;
   cursor: pointer;
   text-decoration: none;
-  color: var(--claro);
-  font-weight: 500;
-  font-size: 1rem;
-  position: relative;
-  padding: 0.5rem 0;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding: 9px 24px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.meu-portfolio .menu-link::after {
-  content: '';
-  height: 2px;
-  width: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
-  transition: width 0.3s ease;
-}
-
-.meu-portfolio .menu-link:hover::after {
-  width: 100%;
+.meu-portfolio .menu-link:hover {
+  background-color: #1e293b;
+  border-color: #1e293b;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
 }
 
 /* ---------- Cabeçalho ---------- */

@@ -1,110 +1,105 @@
 /* =============================================================================
-   Tema Tecnológico Unificado (Inspirado no Meu Portfólio)
-   Paleta: 
-   --primaria: #4f46e5 (Índigo vibrante)
-   --secundaria: #7c3aed (Roxo tech)
-   --escuro: #0f172a (Slate escuro profundo)
-   --card-bg: rgba(30, 41, 59, 0.7) ou #1e293b
-   --borda-vidro: rgba(255, 255, 255, 0.1)
-   --claro: #e2e8f0
-   --texto-mutado: #94a3b8
+   Tema Minimalista & Profissional (Cinza Confortável / Slate Corporativo)
+   Ajustado para conforto visual: fundo levemente escurecido para não irritar
+   os olhos, e botões da aba portfólio com espaçamento e padding confortáveis.
 ============================================================================= */
 
 :root {
-  --primaria: #4f46e5;
-  --secundaria: #7c3aed;
+  --primaria: #334155;
+  --secundaria: #475569;
   --escuro: #0f172a;
-  --maisEscuro: #0a0f1d;
-  --card-bg: rgba(30, 41, 59, 0.75);
-  --card-header: rgba(15, 23, 42, 0.85);
-  --borda-vidro: rgba(255, 255, 255, 0.1);
-  --claro: #e2e8f0;
-  --branco: #ffffff;
-  --texto-mutado: #94a3b8;
-  --gradiente-tech: linear-gradient(135deg, var(--primaria), var(--secundaria));
-  --glow-tech: 0 0 25px rgba(79, 70, 229, 0.35);
+  --bg-geral: #cbd5e1; /* Cinza médio suave que descansa a visão e tira o ofuscamento */
+  --card-bg: #ffffff;
+  --card-subtle: #f1f5f9;
+  --borda-suave: #cbd5e1;
+  --borda-foco: #94a3b8;
+  --texto-principal: #0f172a;
+  --texto-secundario: #334155;
+  --texto-mutado: #64748b;
+  --gradiente-banner: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  --sombra-card: 0 12px 35px rgba(15, 23, 42, 0.12);
+  --sombra-suave: 0 3px 10px rgba(15, 23, 42, 0.05);
 }
 
-/* Fundo Geral da Página */
+/* Fundo Geral da Página - Tons suaves que eliminam o clarão branco */
 body {
-  background-color: var(--escuro) !important;
+  background-color: var(--bg-geral) !important;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.25) 0%, transparent 35%),
-    radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.25) 0%, transparent 35%),
-    radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.9) 0%, var(--maisEscuro) 100%) !important;
+    linear-gradient(180deg, #d8e2ec 0%, #cbd5e1 50%, #b8c5d6 100%) !important;
   background-attachment: fixed !important;
-  color: var(--claro) !important;
+  color: var(--texto-secundario) !important;
 }
 
 /* Preloader */
 .preloader {
-  background: var(--escuro) !important;
+  background: #ffffff !important;
 }
 .preloader-spinner:after {
-  border-top-color: var(--secundaria) !important;
+  border-top-color: var(--primaria) !important;
 }
 
 /* Header / Navbar Global */
 .site-title {
-  color: var(--claro) !important;
+  color: var(--escuro) !important;
 }
 .site-title span {
-  color: var(--primaria) !important;
-  background: var(--gradiente-tech);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--secundaria) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  font-weight: 700;
 }
 .header.sticked {
-  background-color: rgba(15, 23, 42, 0.95) !important;
+  background-color: rgba(248, 250, 252, 0.95) !important;
   backdrop-filter: blur(12px) !important;
-  border-bottom: 1px solid var(--borda-vidro) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06) !important;
 }
 .header.sticked .site-title {
-  color: var(--claro) !important;
+  color: var(--escuro) !important;
 }
 .site-main-menu li a {
-  color: var(--claro) !important;
-  opacity: 0.7 !important;
-  transition: all 0.3s ease !important;
+  color: var(--texto-secundario) !important;
+  opacity: 0.85 !important;
+  font-weight: 500 !important;
+  transition: all 0.25s ease !important;
 }
 .site-main-menu li a:hover,
 .site-main-menu li.active a {
   opacity: 1 !important;
-  color: #fff !important;
+  color: var(--escuro) !important;
 }
 .site-main-menu li a:after {
-  background: var(--gradiente-tech) !important;
-  height: 3px !important;
-  box-shadow: 0 0 8px var(--primaria) !important;
+  background: var(--primaria) !important;
+  height: 2px !important;
+  box-shadow: none !important;
 }
 
 /* Mobile Header */
 .mobile-header {
-  background-color: rgba(15, 23, 42, 0.95) !important;
-  border-bottom: 1px solid var(--borda-vidro) !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
 }
 .mobile-site-title {
-  color: var(--claro) !important;
+  color: var(--escuro) !important;
 }
 .menu-toggle i {
-  color: var(--claro) !important;
+  color: var(--escuro) !important;
 }
 
-/* Container Principal das Páginas (Card Flutuante Central) */
+/* Container Principal das Páginas (Card Central com Contraste Suave) */
 .pt-page .section-inner {
   background-color: var(--card-bg) !important;
-  backdrop-filter: blur(16px) !important;
-  border: 1px solid var(--borda-vidro) !important;
-  border-radius: 20px !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--glow-tech) !important;
-  color: var(--claro) !important;
+  backdrop-filter: none !important;
+  border: 1px solid var(--borda-suave) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--sombra-card) !important;
+  color: var(--texto-secundario) !important;
 }
 
-/* Cabeçalho da Página Inicial (Home) */
+/* Cabeçalho da Página Inicial (Home) - Banner Grafite Sóbrio & Executivo */
 .start-page-content .page-header {
-  background: var(--gradiente-tech) !important;
-  border-bottom: 1px solid var(--borda-vidro) !important;
+  background: var(--gradiente-banner) !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
   position: relative !important;
   overflow: hidden !important;
 }
@@ -112,13 +107,13 @@ body {
   content: '' !important;
   position: absolute !important;
   top: 0; left: 0; right: 0; bottom: 0 !important;
-  background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%) !important;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%) !important;
   pointer-events: none !important;
 }
 .start-page-content .page-header .photo {
-  border: 4px solid var(--borda-vidro) !important;
-  background-color: var(--escuro) !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+  border: 4px solid #ffffff !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18) !important;
   border-radius: 12px !important;
   overflow: hidden !important;
 }
@@ -127,10 +122,10 @@ body {
 }
 .start-page-content .page-header .title-block h1 {
   color: #ffffff !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
 }
 .start-page-content .page-header .title-block .sp-subtitle {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #e2e8f0 !important;
 }
 
 /* Redes Sociais no Header */
@@ -138,38 +133,39 @@ body {
   background-color: rgba(255, 255, 255, 0.15) !important;
   color: #ffffff !important;
   backdrop-filter: blur(5px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  transition: all 0.3s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  transition: all 0.25s ease !important;
 }
 .start-page-content .social-links a:hover {
   background: #ffffff !important;
-  color: var(--primaria) !important;
-  transform: translateY(-4px) !important;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3) !important;
+  color: var(--escuro) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Títulos das Seções (H2, H3, H4) */
+/* Títulos das Seções (H1, H2, H3, H4) */
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff !important;
+  color: var(--escuro) !important;
 }
 .block-title h3 {
-  color: #ffffff !important;
+  color: var(--escuro) !important;
+  font-weight: 700 !important;
+  position: relative !important;
 }
 .block-title h3 span {
-  color: var(--primaria) !important;
-  background: var(--gradiente-tech) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  color: var(--secundaria) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
 }
 
 /* Cabeçalho das Subpáginas (Currículo / Portfólio) */
 .custom-page-content .page-header.color-1 {
-  background: var(--gradiente-tech) !important;
-  border-bottom: 1px solid var(--borda-vidro) !important;
+  background: var(--gradiente-banner) !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
 }
 .custom-page-content .page-header.color-1 h2 {
   color: #ffffff !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
 }
 .custom-page-content .page-content {
   background-color: transparent !important;
@@ -177,154 +173,357 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Textos e Parágrafos */
 p {
-  color: var(--claro) !important;
+  color: var(--texto-secundario) !important;
+  line-height: 1.65 !important;
 }
 
 /* Lista de Informações Pessoais (Idade, Cidade, etc.) */
 .info-list li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
   padding: 8px 0 !important;
 }
 .info-list li .title {
-  color: #ffffff !important;
+  color: var(--escuro) !important;
   font-weight: 600 !important;
 }
 .info-list li .value {
-  color: var(--texto-mutado) !important;
+  color: var(--texto-secundario) !important;
 }
 
 /* Timeline (Educação, Experiência, Idiomas) */
 .timeline {
-  border-left: 2px solid rgba(79, 70, 229, 0.3) !important;
+  border-left: 2px solid var(--borda-foco) !important;
 }
 .timeline-item {
-  background-color: rgba(15, 23, 42, 0.6) !important;
-  border: 1px solid var(--borda-vidro) !important;
+  background-color: var(--card-subtle) !important;
+  border: 1px solid var(--borda-suave) !important;
   border-left: 3px solid var(--primaria) !important;
   border-radius: 8px !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(8px) !important;
-  transition: all 0.3s ease !important;
+  box-shadow: var(--sombra-suave) !important;
+  backdrop-filter: none !important;
+  transition: all 0.25s ease !important;
 }
 .timeline-item:hover {
-  transform: translateX(5px) !important;
-  border-left-color: var(--secundaria) !important;
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.2) !important;
+  transform: translateX(4px) !important;
+  border-left-color: var(--escuro) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08) !important;
+  background-color: #ffffff !important;
 }
 .timeline-item:before {
-  background-color: var(--escuro) !important;
-  border: 2px solid var(--secundaria) !important;
-  box-shadow: 0 0 8px var(--primaria) !important;
+  background-color: #ffffff !important;
+  border: 2px solid var(--primaria) !important;
+  box-shadow: none !important;
 }
 .timeline-item:after {
   background-color: var(--primaria) !important;
 }
 .timeline-item .item-title {
-  color: #ffffff !important;
+  color: var(--escuro) !important;
   font-weight: 600 !important;
 }
 .timeline-item .item-period {
-  color: #a78bfa !important; /* Roxo claro legível */
-  font-weight: 500 !important;
+  color: var(--secundaria) !important;
+  font-weight: 600 !important;
 }
 .timeline-item .item-small {
   color: var(--texto-mutado) !important;
-  border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-left: 1px solid var(--borda-foco) !important;
 }
 .timeline-item .item-description {
-  color: var(--claro) !important;
+  color: var(--texto-secundario) !important;
   line-height: 1.6 !important;
 }
 
 /* Barras de Habilidades (Skills) */
 .skills-info h4 {
-  color: #ffffff !important;
-  font-weight: 500 !important;
+  color: var(--escuro) !important;
+  font-weight: 600 !important;
 }
 .skill-container {
-  background-color: rgba(15, 23, 42, 0.8) !important;
-  border: 1px solid var(--borda-vidro) !important;
-  border-radius: 8px !important;
-  height: 12px !important;
+  background-color: var(--borda-suave) !important;
+  border: none !important;
+  border-radius: 6px !important;
+  height: 10px !important;
   overflow: hidden !important;
 }
 .skill-percentage {
-  background: var(--gradiente-tech) !important;
-  box-shadow: 0 0 10px rgba(79, 70, 229, 0.5) !important;
-  border-radius: 8px !important;
+  background: linear-gradient(90deg, #475569, #1e293b) !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
 }
 
 /* Tags / Badges de Competências */
 .tags li a {
-  background-color: rgba(15, 23, 42, 0.7) !important;
-  color: var(--claro) !important;
-  border: 1px solid var(--borda-vidro) !important;
+  background-color: var(--card-subtle) !important;
+  color: var(--texto-secundario) !important;
+  border: 1px solid var(--borda-suave) !important;
   border-radius: 6px !important;
   padding: 6px 12px !important;
   display: inline-block !important;
-  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
 }
 .tags li a:hover {
-  background: var(--gradiente-tech) !important;
+  background: var(--primaria) !important;
   color: #ffffff !important;
-  border-color: transparent !important;
+  border-color: var(--primaria) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35) !important;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15) !important;
 }
 
 /* Botões (Download Currículo e Formulário) */
 .btn-secondary,
 .download-resume .btn,
 .btn-primary {
-  background: var(--gradiente-tech) !important;
+  background: var(--primaria) !important;
   color: #ffffff !important;
   border: none !important;
-  border-radius: 8px !important;
+  border-radius: 6px !important;
   font-weight: 600 !important;
   padding: 12px 28px !important;
-  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4) !important;
-  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12) !important;
+  transition: all 0.25s ease !important;
   text-transform: none !important;
 }
 .btn-secondary:hover,
 .download-resume .btn:hover,
 .btn-primary:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 6px 22px rgba(124, 58, 237, 0.6) !important;
+  background: var(--escuro) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2) !important;
   color: #ffffff !important;
 }
 
-/* Ajuste na Aba Portfólio (Subpágina) */
-/* Elimina borda duplicada da seção interna para fluir com o tema */
+/* =============================================================================
+   Aba Portfólio (Subpágina .meu-portfolio) - Estilo Cinza Discreto & Botões Ajustados
+============================================================================= */
 .pt-page[data-id="portfolio"] .section-inner {
   padding: 0 !important;
   background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
 }
+
 .meu-portfolio {
-  border-radius: 20px !important;
-  border: 1px solid var(--borda-vidro) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--glow-tech) !important;
+  background-color: #ffffff !important;
+  color: var(--texto-secundario) !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--borda-suave) !important;
+  box-shadow: var(--sombra-card) !important;
+}
+
+/* Ocultar partículas */
+.meu-portfolio .particulas {
+  display: none !important;
+}
+
+/* Barra de Navegação Interna do Portfólio */
+.meu-portfolio .navegacao {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
+  padding: 1.25rem 2rem !important;
+}
+
+.meu-portfolio .menu {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  list-style: none !important;
+  gap: 1.25rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.meu-portfolio .menu li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Botões Início, Sobre, Projetos, Contato com espaçamento generoso e sem colar nas bordas */
+.meu-portfolio .menu-link {
+  background-color: var(--card-subtle) !important;
+  border: 1px solid var(--borda-suave) !important;
+  border-radius: 24px !important;
+  padding: 9px 24px !important; /* Espaçamento interno confortável nas laterais */
+  color: var(--texto-secundario) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+  text-transform: none !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+.meu-portfolio .menu-link:hover {
+  background-color: var(--primaria) !important;
+  border-color: var(--primaria) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15) !important;
+}
+
+.meu-portfolio .menu-link::after {
+  display: none !important;
+}
+
+/* Cabeçalho do Portfólio */
+.meu-portfolio .cabecalho {
+  background-color: var(--card-subtle) !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
+  min-height: auto !important;
+  padding: 4rem 1.5rem !important;
+}
+
+.meu-portfolio .foto-perfil {
+  border: 4px solid #ffffff !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.meu-portfolio h1 {
+  color: var(--escuro) !important;
+  font-size: 2.8rem !important;
+  margin-top: 15px !important;
+}
+
+.meu-portfolio .cabecalho-sub-titulo {
+  color: var(--texto-mutado) !important;
+  font-weight: 500 !important;
+}
+
+/* Seção Sobre mim */
+.meu-portfolio .sobre {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
+  padding: 4rem 2rem !important;
+}
+
+.meu-portfolio .sobre-titulo,
+.meu-portfolio .projetos-titulo,
+.meu-portfolio .contatos-titulo {
+  color: var(--escuro) !important;
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 30px !important;
+}
+
+.meu-portfolio .sobre-caixa {
+  background: var(--card-subtle) !important;
+  border: 1px solid var(--borda-suave) !important;
+  backdrop-filter: none !important;
+  color: var(--texto-secundario) !important;
+  box-shadow: var(--sombra-suave) !important;
+  padding: 2.5rem !important;
+}
+
+.meu-portfolio .sobre-paragrafo {
+  color: var(--texto-secundario) !important;
+  line-height: 1.7 !important;
+}
+
+/* Seção Meus Projetos */
+.meu-portfolio .projetos {
+  background-color: var(--card-subtle) !important;
+  border-bottom: 1px solid var(--borda-suave) !important;
+  padding: 4rem 2rem !important;
+}
+
+.meu-portfolio .projetos-card {
+  background: #ffffff !important;
+  border: 1px solid var(--borda-suave) !important;
+  border-radius: 12px !important;
+  backdrop-filter: none !important;
+  box-shadow: var(--sombra-suave) !important;
+  transition: all 0.25s ease !important;
+}
+
+.meu-portfolio .projetos-card:hover {
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1) !important;
+  transform: translateY(-5px) !important;
+  border-color: var(--borda-foco) !important;
+}
+
+.meu-portfolio .inf-projetos {
+  color: var(--escuro) !important;
+  font-weight: 600 !important;
+}
+
+.meu-portfolio .paragrafo-projetos {
+  color: var(--texto-secundario) !important;
+  line-height: 1.55 !important;
+}
+
+/* Seção Contato */
+.meu-portfolio .contatos {
+  background-color: #ffffff !important;
+  padding: 4rem 2rem !important;
+}
+
+.meu-portfolio .formulario-contato {
+  background: var(--card-subtle) !important;
+  border: 1px solid var(--borda-suave) !important;
+  backdrop-filter: none !important;
+  box-shadow: var(--sombra-suave) !important;
+  padding: 2.5rem !important;
+}
+
+.meu-portfolio .campo-form {
+  background: #ffffff !important;
+  border: 1px solid var(--borda-foco) !important;
+  color: var(--escuro) !important;
+  border-radius: 6px !important;
+  padding: 0.9rem 1.2rem !important;
+}
+
+.meu-portfolio .campo-form::placeholder {
+  color: var(--texto-mutado) !important;
+}
+
+.meu-portfolio .campo-form:focus {
+  border-color: var(--primaria) !important;
+  box-shadow: 0 0 0 3px rgba(51, 65, 85, 0.15) !important;
+}
+
+.meu-portfolio .botao-form {
+  background: var(--primaria) !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12) !important;
+  transition: all 0.25s ease !important;
+}
+
+.meu-portfolio .botao-form:hover {
+  background: var(--escuro) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2) !important;
+}
+
+.meu-portfolio a,
+.meu-portfolio a:hover,
+.meu-portfolio a:focus {
+  color: inherit !important;
 }
 
 /* Footer / Copyrights */
 body > footer .copyrights {
   color: var(--texto-mutado) !important;
-  opacity: 0.8 !important;
+  opacity: 0.9 !important;
 }
 
-/* Rolagem elegante (Scrollbar) */
+/* Scrollbar refinada */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--escuro);
+  background: var(--bg-geral);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(79, 70, 229, 0.5);
+  background: var(--borda-foco);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secundaria);
+  background: var(--texto-mutado);
 }
